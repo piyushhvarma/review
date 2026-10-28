@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radhika Jewellers • Share your experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fdfcf9;
+  --bg-gradient: radial-gradient(120% 70% at 50% 0%, #f9f0d9 0%, #fdfcf9 55%, #f6f1e3 100%);
+  --card: #ffffff;
+  --card-border: rgba(197, 155, 39, 0.24);
+  --ink: #1a1713;
+  --ink-secondary: #595349;
+  --mute: #827b70;
+  --gold: #b3821a;
+  --gold-gradient: linear-gradient(135deg, #c59728 0%, #dfb746 50%, #af7f15 100%);
+  --gold-glow: rgba(197, 151, 40, 0.28);
+  --gold-subtle: #fbf6ea;
+  --gold-chip: #fcf9f2;
+  --line: #ede6d8;
+  --line-light: #f5f0e6;
+  --shadow-card: 0 20px 48px -12px rgba(179, 130, 26, 0.14), 0 4px 18px rgba(0, 0, 0, 0.04);
+  --shadow-btn: 0 10px 24px -4px rgba(184, 134, 11, 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0c0f;
+    --bg-gradient: radial-gradient(120% 70% at 50% 0%, #21190a 0%, #0d0c0f 65%);
+    --card: #16151a;
+    --card-border: rgba(223, 183, 70, 0.26);
+    --ink: #f7f5f0;
+    --ink-secondary: #cbc5b8;
+    --mute: #968f83;
+    --gold: #dfb746;
+    --gold-gradient: linear-gradient(135deg, #dfb746 0%, #f4d97f 50%, #c49624 100%);
+    --gold-glow: rgba(223, 183, 70, 0.25);
+    --gold-subtle: #241c0b;
+    --gold-chip: #1e1c22;
+    --line: #29262e;
+    --line-light: #201e25;
+    --shadow-card: 0 24px 50px -15px rgba(0, 0, 0, 0.85), 0 0 28px rgba(223, 183, 70, 0.07);
+    --shadow-btn: 0 10px 25px -4px rgba(223, 183, 70, 0.32);
+  }
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+}
+.wrap {
+  width: 100%;
+  max-width: 520px;
+  padding: 24px 18px 70px;
+}
+
+/* Luxury Brand Header */
+.brand {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.brand-crest {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold-subtle);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 14px var(--gold-glow);
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+.brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+.brand-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  background: var(--gold-subtle);
+  padding: 3px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+}
+.brand-sub .dot { font-size: 8px; opacity: 0.6; }
+
+/* Language Segmented Control */
+.lang-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0 20px;
+}
+.lang {
+  display: inline-flex;
+  background: var(--card);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  gap: 4px;
+}
+.lang button {
+  border: 0;
+  background: transparent;
+  color: var(--mute);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+.lang button:hover {
+  color: var(--ink);
+}
+.lang button.on {
+  background: var(--gold-gradient);
+  color: #171203;
+  box-shadow: 0 3px 12px var(--gold-glow);
+  font-weight: 700;
+}
+
+/* Headline */
+.heading-area {
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+}
+.sub {
+  color: var(--mute);
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Stepper Progress Bar */
+.prog-wrapper {
+  margin: 14px 0 20px;
+}
+.prog-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mute);
+  margin-bottom: 6px;
+}
+.prog-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--gold);
+}
+.prog-step-badge i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+}
+.bar {
+  height: 6px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--gold-gradient);
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(8px);
+  animation: fadeInStep 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.q {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+.hint {
+  color: var(--mute);
+  font-size: 13.5px;
+  margin: 0 0 16px;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 4px;
+}
+.chip {
+  border: 1px solid var(--line);
+  background: var(--gold-chip);
+  color: var(--ink);
+  padding: 10px 15px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: inherit;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+.chip:hover {
+  border-color: var(--gold);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.12);
+}
+.chip.on {
+  background: var(--gold-gradient);
+  color: #1a1403;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 6px 18px var(--gold-glow);
+  transform: translateY(-2px);
+}
+
+/* Stars */
+.star-container {
+  text-align: center;
+  padding: 12px 0 8px;
+}
+.stars {
+  display: flex;
+  gap: 10px;
+  font-size: 44px;
+  justify-content: center;
+  margin: 4px 0 10px;
+}
+.stars span {
+  cursor: pointer;
+  color: var(--line-strong);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  display: inline-block;
+  line-height: 1;
+}
+.stars span:hover {
+  transform: scale(1.18);
+  color: #fad36d;
+}
+.stars span.on {
+  color: #f5be27;
+  text-shadow: 0 0 18px rgba(245, 190, 39, 0.55);
+  transform: scale(1.08);
+}
+.star-label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--gold);
+  min-height: 22px;
+}
+
+/* Navigation Buttons */
+.row {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+button.btn {
+  flex: 1;
+  padding: 15px 20px;
+  border-radius: 14px;
+  border: 0;
+  background: var(--gold-gradient);
+  color: #171203;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+button.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -2px rgba(184, 134, 11, 0.42);
+  filter: brightness(1.05);
+}
+button.btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+button.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  box-shadow: none;
+  font-weight: 600;
+}
+button.btn.ghost:hover:not(:disabled) {
+  background: var(--gold-subtle);
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+button.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Review Textarea */
+.review-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.review-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--gold);
+  background: var(--gold-subtle);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+}
+textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid var(--card-border);
+  background: var(--gold-subtle);
+  color: var(--ink);
+  font: 15px/1.6 inherit;
+  resize: vertical;
+  transition: all 0.25s ease;
+  outline: none;
+}
+textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-glow);
+  background: var(--card);
+}
+.note {
+  font-size: 12.5px;
+  color: var(--mute);
+  margin-top: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Trust footer */
+.trust-bar {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mute);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.trust-bar span.icon { color: var(--gold); font-size: 14px; }
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: #1c1813;
+  color: #fff;
+  border: 1px solid rgba(223, 183, 70, 0.4);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  z-index: 999;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <div class="brand-crest">✨</div>
+    <h2 class="brand-title">Radhika Jewellers</h2>
+    <div class="brand-sub">
+      <span>Murtizapur</span>
+      <span class="dot">•</span>
+      <span>100% Hallmarked</span>
+    </div>
+  </header>
+
+  <div class="lang-wrap">
+    <div class="lang">
+      <button data-l="hi" class="on">Hinglish</button>
+      <button data-l="mr">मराठी</button>
+      <button data-l="en">English</button>
+    </div>
+  </div>
+
+  <div class="heading-area">
+    <h1 id="title"></h1>
+    <p class="sub" id="sub"></p>
+  </div>
+
+  <div class="prog-wrapper">
+    <div class="prog-meta">
+      <span class="prog-step-badge"><i></i> <span id="step-label">Step</span></span>
+      <span id="step-num">1 / 4</span>
+    </div>
+    <div class="bar"><i id="prog"></i></div>
+  </div>
+
+  <div class="card" id="step"></div>
+
+  <div class="trust-bar">
+    <span class="icon">🔒</span>
+    <span>Takes only 30 seconds • Directly posted on Google</span>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* ============ CONFIG: edit these ============ */
+const CONFIG = {
+  SHOP_NAME: "Radhika Jewellers",
+  PLACE_ID: "ChIJj4wJOpPR1jsRXSsVJbX8bUc",
+  AI_ENDPOINT: "/.netlify/functions/review"   // falls back to built in templates if this fails
+};
+
+/* ============ DATA (hi = Hinglish, mr = Marathi, en = English) ============ */
+const ITEMS = [
+  {id:"anguthi",e:"💍",hi:"Anguthi (Ring)",mr:"अंगठी",en:"Ring (Anguthi)"},
+  {id:"earrings",e:"👂",hi:"Jhumke / Tops",mr:"झुमके / कानातले",en:"Earrings / Jhumke"},
+  {id:"chain",e:"⛓️",hi:"Chain / Haar",mr:"चेन / हार",en:"Chain / Necklace"},
+  {id:"pendant",e:"📿",hi:"Pendant / Locket",mr:"पेंडंट / लॉकेट",en:"Pendant / Locket"},
+  {id:"mangalsutra",e:"✨",hi:"Mangalsutra",mr:"मंगळसूत्र",en:"Mangalsutra"},
+  {id:"bangles",e:"⭕",hi:"Chudiyan / Kangan",mr:"बांगड्या / कंकण",en:"Bangles / Kangan"},
+  {id:"bracelet",e:"🔗",hi:"Bracelet / Kada",mr:"ब्रेसलेट / कडा",en:"Bracelet / Kada"},
+  {id:"nath",e:"🌸",hi:"Nath / Nose Pin",mr:"नथ / चमकी",en:"Nath / Nose Pin"},
+  {id:"payal",e:"🔔",hi:"Payal",mr:"पैंजण",en:"Payal (Anklet)"},
+  {id:"bridal",e:"👑",hi:"Dulhan / Bridal Set",mr:"लग्नाचा दागिने सेट",en:"Bridal / Wedding Set"},
+  {id:"custom",e:"🛠️",hi:"Custom Order Design",mr:"ऑर्डर प्रमाणे दागिने",en:"Custom Design Order"},
+  {id:"coin",e:"🪙",hi:"Sone/Chandi ka Sikka",mr:"सोने/चांदीचे नाणे",en:"Gold / Silver Coin"},
+  {id:"utensils",e:"🥣",hi:"Chandi ke Bartan",mr:"चांदीचे भांडे",en:"Silver Utensils / Bartan"},
+  {id:"pooja",e:"🪔",hi:"Pooja Saman / Murti",mr:"पूजा साहित्य / मूर्ती",en:"Pooja Items / Murti"},
+  {id:"gift",e:"🎁",hi:"Gift Item",mr:"भेटवस्तू (Gift)",en:"Gift Item"}
+];
+
+const LIKES = [
+  {id:"apnapan",hi:"Ghar jaisa apnapan",mr:"घरच्यासारखे आपलेपण",en:"Treated like family",
+   f:{hi:["owner aur staff ne bilkul parivar jaisa apnapan dikhaya","aate hi paani chai pucha aur bohot izzat di"],
+      mr:["मालक आणि कर्मचाऱ्यांनी अगदी घरच्या माणसासारखा आदर दिला","खूप आपलेपण वाटले आणि चहा-पाणी विचारून प्रेमळ स्वागत केले"],
+      en:["they welcomed us warmly and treated us like family","felt a genuine personal touch, offered tea and made us so comfortable"]}},
+
+  {id:"patience",hi:"Aaram se sab dikhaya",mr:"शांतपणे सर्व दाखवले",en:"Showed designs patiently",
+   f:{hi:["bina kisi ghai ke sabhi designs aaram se muskura ke dikhaye","bohot patience ke sath har piece explain kiya"],
+      mr:["कोणतीही घाई न करता हसतमुखाने सर्व डिझाइन दाखवले","खूप संयमाने आणि मन लावून प्रत्येक दागिना दाखवला"],
+      en:["patiently showed dozens of designs with a smile","zero rush or pressure to buy, attended us very calmly"]}},
+
+  {id:"honest",hi:"Sachi aur imaandar salah",mr:"प्रामाणिक सल्ला व मार्गदर्शन",en:"Honest advice & guidance",
+   f:{hi:["bhaiya ne bilkul sahi aur imaandar guidance di","weight aur making charges ekdum saaf aur transparent rakhe"],
+      mr:["अतिशय प्रामाणिक सल्ला दिला आणि वजनात पूर्ण पारदर्शकता ठेवली","घडणावळ आणि शुद्धतेबद्दल सर्व स्पष्टपणे सांगितले"],
+      en:["gave very honest guidance without pushing expensive items","complete transparency in weighing and billing"]}},
+
+  {id:"customfit",hi:"Meri pasand ko samjha",mr:"आमची आवड समजून घेतली",en:"Understood my taste",
+   f:{hi:["meri choice aur budget ko bohot achhe se samajhkar suggest kiya","jo design dimaag me socha tha bilkul waisa hi pyara mila"],
+      mr:["आमची आवड आणि बजेट अचूक समजून घेतले","मला हवे होते अगदी तसेच मनासारखे डिझाइन मिळाले"],
+      en:["understood my exact taste and budget perfectly","got the exact dream design I had in mind"]}},
+
+  {id:"design",hi:"Sundar aur latest designs",mr:"नवीन व सुंदर डिझाइन",en:"Unique & latest designs",
+   f:{hi:["designs ekdum latest aur finishing lajawab hai","bohot hi sundar aur trendy collection hai"],
+      mr:["दागिन्यांची घडणावळ आणि फिनिशिंग अप्रतिम आहे","नवीन फॅशनचे खूप सुंदर डिझाइन्स उपलब्ध आहेत"],
+      en:["craftsmanship and finish are truly exquisite","huge collection of fresh, trending designs"]}},
+
+  {id:"purity",hi:"100% Asli purity",mr:"१००% शुद्धता व हॉलमार्क",en:"100% Hallmark purity",
+   f:{hi:["BIS Hallmark purity pe aankh band karke bharosa hai","jewellery ki quality aur shuddhata ekdum pakki hai"],
+      mr:["हॉलमार्क आणि शुद्धतेवर १००% विश्वास ठेवू शकता","दागिन्यांची शुद्धता आणि दर्जा अतिशय खात्रीशीर आहे"],
+      en:["100% hallmarked jewellery with complete trust","felt completely confident about the gold and silver quality"]}},
+
+  {id:"price",hi:"Wajib making charges",mr:"वाजवी घडणावळ",en:"Fair making charges",
+   f:{hi:["making charges bohot waajib hain, bilkul sahi rate mila","market se behtar daam aur sachhi dealing mili"],
+      mr:["घडणावळ अतिशय वाजवी आहे आणि दरही योग्य आहेत","बाजारापेक्षा चांगला दर आणि पारदर्शक बिलिंग मिळाले"],
+      en:["very reasonable making charges compared to others","honest and genuine rates with zero hidden charges"]}},
+
+  {id:"trust",hi:"Murtizapur ka bharosemand naam",mr:"मुर्तिजापूरचा विश्वासू सराफ",en:"Trusted in Murtizapur",
+   f:{hi:["Murtizapur mein saalon purana bharosemand naam hai","pehle bhi liya hai aur hamesha yahi se lete hain"],
+      mr:["मुर्तिजापूरमधील पिढ्यानपिढ्यांचा विश्वासू सराफ","आम्ही अनेक वर्षांपासून येथूनच खात्रीशीर खरेदी करतो"],
+      en:["one of the most reputable and trusted jewellers in Murtizapur","a shop with generational goodwill and trust"]}},
+
+  {id:"pack",hi:"Sundar dabba aur packing",mr:"आकर्षक पॅकिंग",en:"Lovely gift packing",
+   f:{hi:["packing aur gift box bohot pyara diya","surakshit aur premium packing karke di"],
+      mr:["अतिशय सुरेख बॉक्स आणि सुरक्षित पॅकिंग करून दिले","भेट देण्यासाठी उत्तम पॅकिंग मिळाले"],
+      en:["presentation was lovely in a premium gift box","delighted with the neat and safe packaging"]}}
+];
+
+const IMPROVE = [
+  {id:"wait",hi:"Bheed / Intezaar",mr:"गर्दी / प्रतीक्षा",en:"Waiting time",f:{hi:"thoda intezaar karna pada bheed ki wajah se",mr:"गर्दीमुळे थोडी वाट पाहावी लागली",en:"there was some waiting due to rush"}},
+  {id:"price",hi:"Making charges",mr:"घडणावळ दर",en:"Making charges",f:{hi:"making charges me thoda aur discount milta toh badhiya tha",mr:"घडणावळीत आणखी थोडी सवलत मिळाली असती तर बरे झाले असते",en:"would appreciate a little more discount on making charges"}},
+  {id:"variety",hi:"Aur designs",mr:"आणखी व्हरायटी",en:"More variety",f:{hi:"daily wear me thode aur naye designs dekhne the",mr:"आणखी काही नवे डिझाइन्स बघायला आवडतील",en:"would love to see even more daily wear designs"}},
+  {id:"rush",hi:"Counter pe bheed",mr:"काउंटरवर गर्दी",en:"Counter rush",f:{hi:"festival rush ki wajah se counter pe thodi bheed thi",mr:"सणामुळे काउंटरवर बरीच गर्दी होती",en:"the counter was quite crowded during rush hours"}}
+];
+
+const VISITS = [
+  {id:"first",hi:"Pehli baar visit kiya",mr:"पहिल्यांदाच भेट दिली",en:"First visit"},
+  {id:"repeat",hi:"Hamare family jeweller hain",mr:"आमचे कौटुंबिक सराफ",en:"Family / Regular customer"},
+  {id:"wedding",hi:"Shaadi / lagan ki shopping",mr:"लग्नाची / कार्याची खरेदी",en:"Wedding / Bridal shopping"},
+  {id:"fest",hi:"Festival / Dhanteras",mr:"सण / धनत्रयोदशी",en:"Festival / Dhanteras"},
+  {id:"gift",hi:"Kisi ko gift dene ke liye",mr:"भेटवस्तू देण्यासाठी",en:"Bought as a gift"}
+];
+
+const T = {
+  hi:{title:"Aapka experience kaisa raha?",sub:"Sirf 30 second. Post karne se pehle review badal sakte hain.",
+    q1:"Aapne kya liya?",h1:"Jo bhi liya ho select karein",q2:"Kya sabse achha laga?",h2:"Apne dil ki baat chunein",
+    q3:"Aap humein kitne star denge?",h3:"Star pe tap karein",q4:"Kaisi visit thi?",h4:"Optional",
+    q5:"Kya behtar ho sakta hai?",h5:"Optional",next:"Aage",back:"Peeche",gen:"Mera review banayein",wait:"Likh rahe hain...",
+    final:"Aapka review",finalh:"Ye aapke jawabon se bana draft hai. Apne shabdon mein badal sakte hain.",
+    regen:"Dobara likhein",copy:"Copy karein aur Google kholein",copied:"Copy ho gaya! Google page pe paste karein.",
+    note:"Google mein sign in hona zaroori hai. Review tabhi post hota hai jab aap wahan Post dabate hain."},
+  mr:{title:"तुमचा अनुभव कसा होता?",sub:"फक्त 30 सेकंद. पोस्ट करण्यापूर्वी रिव्ह्यू बदलता येईल.",
+    q1:"तुम्ही काय खरेदी केले?",h1:"जे घेतले ते निवडा",q2:"काय सर्वात जास्त आवडले?",h2:"तुमच्या अनुभवानुसार निवडा",
+    q3:"तुम्ही आम्हाला किती स्टार द्याल?",h3:"स्टारवर टॅप करा",q4:"कशी भेट होती?",h4:"ऐच्छिक",
+    q5:"काय सुधारता येईल?",h5:"ऐच्छिक",next:"पुढे",back:"मागे",gen:"माझा रिव्ह्यू तयार करा",wait:"लिहित आहे...",
+    final:"तुमचा रिव्ह्यू",finalh:"हा तुमच्या उत्तरांवरून तयार केलेला मसुदा आहे. तुमच्या शब्दांत बदला.",
+    regen:"पुन्हा लिहा",copy:"कॉपी करा आणि Google उघडा",copied:"कॉपी झाले! Google पेजवर पेस्ट करा.",
+    note:"Google मध्ये साइन इन असणे आवश्यक आहे. तुम्ही तिथे Post दाबल्यावरच रिव्ह्यू प्रकाशित होतो."},
+  en:{title:"How was your visit?",sub:"Takes 30 seconds. You can edit the review before posting.",
+    q1:"What did you buy?",h1:"Select all that apply",q2:"What stood out the most?",h2:"Pick what matches your personal experience",
+    q3:"How would you rate us?",h3:"Tap a star",q4:"What kind of visit was it?",h4:"Optional",
+    q5:"What could be better?",h5:"Optional",next:"Next",back:"Back",gen:"Create my review",wait:"Writing...",
+    final:"Your review",finalh:"This is a draft from your answers. Change anything so it sounds like you.",
+    regen:"Rewrite",copy:"Copy and open Google",copied:"Copied! Paste it on the Google page.",
+    note:"You need to be signed in to Google. Your review is posted only when you tap Post there."}
+};
+const AND = {hi:" aur ",mr:" आणि ",en:" and "};
+
+/* ============ STATE ============ */
+const S = {lang:"hi",step:0,items:new Set(),likes:new Set(),stars:0,visit:null,improve:new Set(),text:""};
+const $ = s => document.querySelector(s);
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const cap = s => s.charAt(0).toUpperCase()+s.slice(1);
+const joinList = (a,l)=> a.length<2 ? (a[0]||"") : a.slice(0,-1).join(", ")+AND[l]+a.slice(-1);
+
+/* ============ FALLBACK TEMPLATE GENERATOR ============ */
+function buildReview(){
+  const l=S.lang, shop=CONFIG.SHOP_NAME, st=S.stars, v=S.visit;
+  const items=ITEMS.filter(i=>S.items.has(i.id)).map(i=>l==="en"?i.en.replace(/ \(.*\)/,"").toLowerCase():i[l].replace(/ \(.*\)/,""));
+  const likes=LIKES.filter(x=>S.likes.has(x.id)).slice(0,3).map(x=>pick(x.f[l]));
+  const imps=IMPROVE.filter(x=>S.improve.has(x.id)).map(x=>x.f[l]);
+  const it=joinList(items,l);
+  const OPEN={
+    hi:{
+      first:`Pehli baar ${shop} gaye the aur humne ${it} liya.`,
+      repeat:`${shop} hamare purane family jeweller hain, is baar ${it} liya.`,
+      wedding:`Ghar me shaadi thi to ${shop} se ${it} ki shopping ki.`,
+      fest:`Festival ke shubh mauke par ${shop} se ${it} khareeda.`,
+      gift:`Gift dene ke liye ${shop} se ${it} pasand kiya.`,
+      def:`${shop} se ${it} khareeda.`
+    },
+    mr:{
+      first:`पहिल्यांदाच ${shop} मध्ये गेलो आणि ${it} खरेदी केले.`,
+      repeat:`${shop} आमचे नेहमीचे कौटुंबिक सराफ आहेत, यावेळी ${it} घेतले.`,
+      wedding:`लग्नाच्या खरेदीसाठी ${shop} मधून ${it} घेतले.`,
+      fest:`सणाच्या मुहूर्तावर ${shop} मधून ${it} खरेदी केले.`,
+      gift:`भेट देण्यासाठी ${shop} मधून ${it} निवडले.`,
+      def:`${shop} मधून ${it} खरेदी केले.`
+    },
+    en:{
+      first:`Visited ${shop} for the first time and bought ${it}.`,
+      repeat:`${shop} is our trusted family jeweller, bought ${it} this time.`,
+      wedding:`Did our wedding shopping at ${shop} and picked up ${it}.`,
+      fest:`Bought ${it} from ${shop} for the festive season.`,
+      gift:`Selected ${it} as a special gift from ${shop}.`,
+      def:`Bought ${it} from ${shop}.`
+    }
+  };
+  const CLOSE={
+    hi:{
+      5:[
+        "Bohot hi pyara experience raha, dil khush ho gaya. Radhika Jewellers zaroor visit karein!",
+        "Murtizapur me jewellery lene ke liye best jagah hai, 100% recommend karunga.",
+        "Aisa apnapan aur imaandar vyavhar har jagah nahi milta. Bohot shukriya!"
+      ],
+      4:[
+        "Overall bohot achha experience raha, shopping se poora santosh hai.",
+        "Badhiya designs aur achha vyavhar raha."
+      ],
+      3:["Overall theek tha, thode sudhaar ki gunjaish hai."],
+      2:["Experience expectation se thoda kam raha."],
+      1:["Main visit se satisfied nahi raha."]
+    },
+    mr:{
+      5:[
+        "खूपच समाधानकारक आणि प्रेमळ अनुभव आला. राधिका ज्वेलर्सला नक्की भेट द्या!",
+        "मुर्तिजापूरमध्ये विश्वासू दागिने खरेदीसाठी सर्वात उत्तम सराफ, नक्की शिफारस करेन.",
+        "असा प्रामाणिकपणा आणि आपलेपणा खूप आवडला. खूप खूप धन्यवाद!"
+      ],
+      4:[
+        "एकंदरीत खूप चांगला अनुभव आला आणि खरेदीने पूर्ण समाधान झाले.",
+        "छान डिझाइन्स आणि नम्र सेवा मिळाली."
+      ],
+      3:["एकंदरीत ठीक अनुभव, थोडी सुधारणा अपेक्षित आहे."],
+      2:["अनुभव अपेक्षेपेक्षा थोडा कमी होता."],
+      1:["मी या भेटीने समाधानी नाही."]
+    },
+    en:{
+      5:[
+        "Truly a heartwarming experience with genuine warmth and trust. Highly recommended!",
+        "Best place for jewellery in Murtizapur, will definitely visit again.",
+        "Loved the personal connection and purity. Thank you Radhika Jewellers!"
+      ],
+      4:[
+        "Overall a very pleasant experience and happy with our purchase.",
+        "Good collection, polite staff and satisfying visit."
+      ],
+      3:["Decent overall, with room to improve."],
+      2:["The experience was below my expectations."],
+      1:["I was not satisfied with my visit."]
+    }
+  };
+  const SOFT={
+    hi:[", lekin koi badi baat nahi.","Halanki "],
+    mr:[", पण काही मोठी अडचण नाही.","तथापि, "],
+    en:[", but nothing major.","However, "]
+  };
+  const out=[OPEN[l][v]||OPEN[l].def];
+  if(likes.length) out.push((l==="en"?cap(joinList(likes,l)):joinList(likes,l))+".");
+  if(imps.length){
+    if(st>=4) out.push((l==="en"?cap(joinList(imps,l)):joinList(imps,l))+SOFT[l][0]);
+    else out.push(SOFT[l][1]+joinList(imps,l)+".");
+  }
+  out.push(pick(CLOSE[l][st]));
+  return out.join(" ").replace(/\.\./g,".");
+}
+
+// Pre-warm backend immediately when page opens
+if(CONFIG.AI_ENDPOINT){
+  try{ fetch(CONFIG.AI_ENDPOINT, {method:"GET", cache:"no-store"}).catch(()=>{}); }catch(e){}
+}
+
+async function makeReview(){
+  if(CONFIG.AI_ENDPOINT){
+    try{
+      const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),6000);
+      const r=await fetch(CONFIG.AI_ENDPOINT,{method:"POST",signal:ctrl.signal,headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({shop:CONFIG.SHOP_NAME,lang:S.lang,items:[...S.items],likes:[...S.likes],stars:S.stars,visit:S.visit,improve:[...S.improve]})});
+      clearTimeout(to);
+      if(r.ok){const j=await r.json(); if(j.review) return j.review;}
+    }catch(e){}
+  }
+  return buildReview();
+}
+
+/* ============ UI ============ */
+function chips(list,set,single){
+  return `<div class="chips">`+list.map(x=>{
+    const lbl=(x.e?x.e+" ":"")+x[S.lang];
+    const on = single ? S[single]===x.id : set.has(x.id);
+    return `<button class="chip ${on?"on":""}" data-id="${x.id}">${lbl}</button>`;}).join("")+`</div>`;
+}
+function steps(){const s=[0,1,2,3]; if(S.stars && S.stars<=3) s.push(4); return s;}
+const STAR_LABELS = {
+  hi: ["","Kharab experience","Thoda sudhaar chahiye","Theek tha","Bohot achha laga!","Dil se pasand aaya! ⭐⭐⭐⭐⭐"],
+  mr: ["","असमाधानी अनुभव","सुधारणा हवी","ठीक अनुभव","खूप आवडले!","अतिशय उत्तम! ⭐⭐⭐⭐⭐"],
+  en: ["","Poor experience","Needs improvement","Average","Very good!","Outstanding! ⭐⭐⭐⭐⭐"]
+};
+const STEP_WORD = {hi:"Step", mr:"पायरी", en:"Step"};
+
+function render(){
+  const t=T[S.lang];
+  document.documentElement.lang = S.lang==="mr"?"mr":(S.lang==="hi"?"hi-Latn":"en");
+  $("#title").textContent=t.title; $("#sub").textContent=t.sub;
+  const seq=steps(), total=seq.length+1;
+  const displayStep = Math.min(S.step+1, total);
+  $("#step-label").textContent = STEP_WORD[S.lang];
+  $("#step-num").textContent = `${displayStep} / ${total}`;
+  $("#prog").style.width=Math.min(100,(S.step/total)*100+10)+"%";
+  
+  const box=$("#step"); let h="";
+  const nav=(canNext,last)=>`<div class="row">${S.step>0?`<button class="btn ghost" id="back">${t.back}</button>`:""}<button class="btn" id="next" ${canNext?"":"disabled"}>${last?t.gen:t.next}</button></div>`;
+  const cur=S.step<seq.length?seq[S.step]:99;
+  const isLast = S.step===seq.length-1;
+
+  if(cur===0){h=`<p class="q">${t.q1}</p><p class="hint">${t.h1}</p>`+chips(ITEMS,S.items)+nav(S.items.size>0,isLast)}
+  else if(cur===1){h=`<p class="q">${t.q2}</p><p class="hint">${t.h2}</p>`+chips(LIKES,S.likes)+nav(S.likes.size>0,isLast)}
+  else if(cur===2){
+    const sLabel = STAR_LABELS[S.lang][S.stars] || "";
+    h=`<p class="q">${t.q3}</p><p class="hint">${t.h3}</p>
+       <div class="star-container">
+         <div class="stars">`+[1,2,3,4,5].map(n=>`<span data-s="${n}" class="${n<=S.stars?"on":""}">★</span>`).join("")+`</div>
+         <div class="star-label">${sLabel}</div>
+       </div>`+nav(S.stars>0,isLast);
+  }
+  else if(cur===3){h=`<p class="q">${t.q4}</p><p class="hint">${t.h4}</p>`+chips(VISITS,null,"visit")+nav(true,isLast)}
+  else if(cur===4){h=`<p class="q">${t.q5}</p><p class="hint">${t.h5}</p>`+chips(IMPROVE,S.improve)+nav(true,isLast)}
+  else {
+    h=`<div class="review-box-header">
+         <p class="q" style="margin:0">${t.final}</p>
+         <span class="review-pill">✨ Auto-Drafted</span>
+       </div>
+       <p class="hint">${t.finalh}</p>
+       <textarea id="rv" spellcheck="false"></textarea>
+       <div class="row">
+         <button class="btn ghost" id="regen">${t.regen}</button>
+         <button class="btn" id="copy"><span>${t.copy}</span> <span>→</span></button>
+       </div>
+       <p class="note">${t.note}</p>`
+  }
+  box.innerHTML=h;
+
+  box.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.id;
+    if(cur===0) toggle(S.items,id);
+    else if(cur===1) toggle(S.likes,id);
+    else if(cur===3) S.visit=S.visit===id?null:id;
+    else if(cur===4) toggle(S.improve,id);
+    render();
+  });
+  box.querySelectorAll(".stars span").forEach(s=>s.onclick=()=>{S.stars=+s.dataset.s;render()});
+  if($("#back")) $("#back").onclick=()=>{S.step--;render()};
+  if($("#next")) $("#next").onclick=async()=>{
+    if(S.step+1>=steps().length){
+      $("#next").disabled=true; $("#next").textContent=t.wait;
+      S.text=await makeReview();
+    }
+    S.step++; render();
+  };
+  if(cur===99){
+    $("#rv").value=S.text;
+    $("#rv").oninput=e=>S.text=e.target.value;
+    $("#regen").onclick=async()=>{
+      const b=$("#regen"); b.disabled=true; b.textContent=t.wait;
+      S.text=await makeReview(); $("#rv").value=S.text; b.disabled=false; b.textContent=t.regen;
+    };
+    $("#copy").onclick=copyAndGo;
+  }
+}
+function toggle(set,id){set.has(id)?set.delete(id):set.add(id)}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
+async function copyAndGo(){
+  const txt=$("#rv").value;
+  try{await navigator.clipboard.writeText(txt)}catch(e){$("#rv").select();document.execCommand("copy")}
+  toast(T[S.lang].copied);
+  setTimeout(()=>window.open("https://search.google.com/local/writereview?placeid="+encodeURIComponent(CONFIG.PLACE_ID),"_blank"),700);
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=async()=>{
+  document.querySelectorAll(".lang button").forEach(x=>x.classList.remove("on"));b.classList.add("on");
+  S.lang=b.dataset.l;
+  if(S.step>=steps().length) S.text=await makeReview();
+  render();
+});
+render();
+</script>
+</body>
+</html>
